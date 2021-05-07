@@ -1,14 +1,14 @@
 import random
 import os
 logo = """
-.------.            _     _            _    _            _    
-|A_  _ |.          | |   | |          | |  (_)          | |   
+.------.            _     _            _    _            _
+|A_  _ |.          | |   | |          | |  (_)          | |
 |( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
 | \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
-|  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
+|  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   <
 `-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\\
-      |  \/ K|                            _/ |                
-      `------'                           |__/           
+      |  \/ K|                            _/ |
+      `------'                           |__/
 """
 cards={'A':1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:10, 'J':10, 'Q':10, 'K':10}
 print(logo)
@@ -26,9 +26,9 @@ def scoreCalculation(tCards):
 
 def hit(tCards):
     tCards.append(random.choice(keys))
-    return scoreCalculation(tCards) 
+    return scoreCalculation(tCards)
 
-def bj():    
+def bj():
     yourCards.append(random.choice(keys))
     yourCards.append(random.choice(keys))
     currentScore=scoreCalculation(yourCards)
@@ -54,7 +54,7 @@ def bj():
             print(f"Your cards: {yourCards}, current score: {currentScore}")
 
     #if pass, now it's time to hit dealer
-    print("You have chosen pass.  Now it's dealer's turn")   
+    print("You have chosen pass.  Now it's dealer's turn")
     print(f"Your cards: {yourCards}, current score: {currentScore}")
 
     while dealerScore < 17:
@@ -69,7 +69,7 @@ def bj():
         print("You lose! Dealer has won!")
     elif currentScore > dealerScore:
         print("You win! Dealer has lost!")
-    else: 
+    else:
         print("The game is a tie!")
 
 nextGame=True
@@ -80,5 +80,8 @@ while nextGame:
     bj()
     if input("Would you like another game? (y/n)").lower() != 'y':
         nextGame=False
-os.system('clear')
-    
+    else:
+        if os.name == 'posix':
+            os.system('clear')
+        else:
+            os.system('cls')

@@ -3,7 +3,7 @@ Simple BlackJack Game
 
 This is a simple version of BlackJack with no split.
 
-Tthe game starts with the cards in your hand and what computer/dealer's first card.
+The game starts with the cards in your hand and what computer/dealer's first card.
 
 You can choose to hit(h) to get one more card or stay(s) to stop receiving card and see dealer's move.
 

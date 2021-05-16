@@ -1,17 +1,15 @@
 from turtle import Turtle, Screen
-# from typing import List, Any
-
-# from ball import ball
+from ball import ball
 from paddle import paddle
 # from scoreboard import Scoreboard
 
-import time
+from time import sleep
 
 # Create Screen
 screen = Screen()
-width = 800
-height = 600
-screen.setup(width, height)
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
 screen.bgcolor('black')
 screen.title("Ivy Shih's Classic Pong Game")
 screen.tracer(0)
@@ -20,13 +18,17 @@ WIDTH = 20
 HEIGHT = 100
 RIGHT_X = 350
 RIGHT_Y = 0
-#ball = ball()
+
 #score = Scoreboard()
 
+ball = ball(0, 0)
 rPaddle = paddle(350, 0)
-
 lPaddle = paddle(-350, 0)
-
+#ball.move()
+# ball.setheading(randint(0, 360))
+# ball.fd(20)
+# while ( -400 < ball.xcor() < 400 and -300 < ball.ycor() < 300):
+#     ball.forward(20)
 
 screen.listen()
 screen.onkey(rPaddle.up, "Up")
@@ -36,7 +38,11 @@ screen.onkey(lPaddle.down, "z")
 
 game_is_on = True
 
+ball.setDirection()
+
 while game_is_on:
     screen.update()
+    sleep(0.02)
+    ball.move()
 
 screen.exitonclick()

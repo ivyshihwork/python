@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-# Paddle basic settings - move up and down 20 pixels
+# Paddle basic settings
 WIDTH = 20
 HEIGHT = 100
 
@@ -12,7 +12,7 @@ class paddle(Turtle):
         super().__init__()
         self.shape('square')
         self.color('white')
-        self.shapesize(BODY_COUNT, 1)
+        self.shapesize(stretch_wid=BODY_COUNT, stretch_len=1)
         self.penup()
         self.goto(x,y)
 

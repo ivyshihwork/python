@@ -12,7 +12,7 @@ The game ends when your points is over 21 or computer/dealer reaches 17 or above
 
 Dependencies of the python packages: random, os
 
-Purpose of writing this game:  for fun and to demonstrate basic python concept in dictionary, array and programming logic.
+Purpose of writing this game:  for fun and to demonstrate basic python concept in dictionary, list and programming logic.
 
 Enjoy!
 

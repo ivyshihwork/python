@@ -24,11 +24,6 @@ RIGHT_Y = 0
 ball = ball(0, 0)
 rPaddle = paddle(350, 0)
 lPaddle = paddle(-350, 0)
-#ball.move()
-# ball.setheading(randint(0, 360))
-# ball.fd(20)
-# while ( -400 < ball.xcor() < 400 and -300 < ball.ycor() < 300):
-#     ball.forward(20)
 
 screen.listen()
 screen.onkey(rPaddle.up, "Up")

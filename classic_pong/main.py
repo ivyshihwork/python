@@ -23,11 +23,9 @@ RIGHT_Y = 0
 #ball = ball()
 #score = Scoreboard()
 
-rPaddle = paddle()
-rPaddle.goto(350,0)
+rPaddle = paddle(350, 0)
 
-lPaddle = paddle()
-lPaddle.goto(-350,0)
+lPaddle = paddle(-350, 0)
 
 
 screen.listen()

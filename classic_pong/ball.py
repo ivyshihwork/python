@@ -4,7 +4,7 @@ from random import randint
 WIDTH = 20
 HEIGHT = 20
 BODY_COUNT = int(HEIGHT / WIDTH)
-PACE = 10
+PACE = 20
 
 class ball(Turtle):
     def __init__(self, x, y):
@@ -15,10 +15,15 @@ class ball(Turtle):
         self.goto(x,y)
 
     def setDirection(self):
-        self.setheading(randint(0, 360))
+        direction=randint(0, 360)
+        self.setheading(direction)
+        print(direction)
 
     def move(self):
         self.forward(PACE)
 
+
     def bounce(self):
-        pass;
+        #if self.ycor() == 300 or -300:
+        self.setheading(360 - self.heading())
+        print(f"Bounce toward {self.heading()}")

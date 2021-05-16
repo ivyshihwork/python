@@ -31,13 +31,18 @@ screen.onkey(rPaddle.down, "Down")
 screen.onkey(lPaddle.up, "a")
 screen.onkey(lPaddle.down, "z")
 
+
 game_is_on = True
 
 ball.setDirection()
 
 while game_is_on:
     screen.update()
-    sleep(0.02)
+    #sleep(0.02)
     ball.move()
+
+    # Let the ball to automatically bounce off the top/bottom
+    if ball.ycor() >= SCREEN_HEIGHT/2 or  ball.ycor() <= -SCREEN_HEIGHT/2:
+        ball.bounce()
 
 screen.exitonclick()

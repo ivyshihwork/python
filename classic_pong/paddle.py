@@ -14,6 +14,7 @@ class paddle(Turtle):
         self.color('white')
         self.shapesize(stretch_wid=BODY_COUNT, stretch_len=1)
         self.penup()
+        self.speed("fastest")
         self.goto(x,y)
 
     def up(self):

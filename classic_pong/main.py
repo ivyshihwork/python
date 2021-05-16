@@ -31,22 +31,26 @@ screen.onkey(rPaddle.down, "Down")
 screen.onkey(lPaddle.up, "a")
 screen.onkey(lPaddle.down, "z")
 
-ball.setDirection()
-distance = (int) (HEIGHT /2 + WIDTH / 2 )
+#ball.setDirection()
+ball.setheading(120)
+distance = (int)(HEIGHT / 2 + WIDTH / 2)
 
 game_is_on = True
+paddle_bounce = 0
+movecount = 0
 
 while game_is_on:
-    screen.update()
-    #sleep(0.02)
-    ball.move()
-
+    sleep(0.1)
     # Let the ball to automatically bounce off the top/bottom plus the ball size
-    if ball.ycor() >= SCREEN_HEIGHT/2 - WIDTH or  ball.ycor() <= -SCREEN_HEIGHT/2 + WIDTH:
-        ball.bounce()
+    if ball.ycor() >= SCREEN_HEIGHT / 2 - WIDTH or ball.ycor() <= -SCREEN_HEIGHT / 2 + WIDTH:
+        ball.bounceY()
 
-    # Detect collision with left and right paddle
-    
+    # Detect collision with paddles
+    if  ball.distance(rPaddle) < HEIGHT/2 and ball.xcor() > 330 or ball.distance(lPaddle) < HEIGHT/2 and ball.xcor() <= -330:
+        ball.bounceX()
+
+    screen.update()
+    ball.move()
 
 
 screen.exitonclick()

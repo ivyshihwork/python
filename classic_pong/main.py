@@ -3,7 +3,7 @@ from paddle import Paddle
 from ball import Ball
 from scoreboard import Scoreboard
 from time import sleep
-from random import randint
+
 
 SCREEN_HEIGHT=600
 SCREEN_WIDTH=800

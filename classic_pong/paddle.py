@@ -1,24 +1,26 @@
 from turtle import Turtle
 
-# Paddle basic settings
 WIDTH = 20
 HEIGHT = 100
+x_pos = 350
+y_pos = 0
 
-BODY_COUNT = int(HEIGHT / WIDTH)
+PADDLE_LENGTH = HEIGHT / WIDTH
 
-class paddle(Turtle):
-    # render paddle right
+class Paddle(Turtle):
     def __init__(self, x, y):
         super().__init__()
-        self.shape('square')
-        self.color('white')
-        self.shapesize(stretch_wid=BODY_COUNT, stretch_len=1)
+        self.color("white")
+        self.shape("square")
+        self.shapesize(PADDLE_LENGTH, 1)
+        self.speed('fastest')
         self.penup()
-        self.speed("fastest")
-        self.goto(x,y)
+        self.goto(x, y)
 
     def up(self):
-        self.goto(self.xcor(), self.ycor() + WIDTH)
+        if self.ycor() <= 222:
+            self.goto(self.xcor(), self.ycor() + WIDTH)
 
     def down(self):
-        self.goto(self.xcor(), self.ycor() - WIDTH)
+        if self.ycor() >= -222:
+            self.goto(self.xcor(), self.ycor() - WIDTH)

@@ -1,55 +1,71 @@
 from turtle import Turtle, Screen
-from ball import ball
-from paddle import paddle
-# from scoreboard import Scoreboard
-
+from paddle import Paddle
+from ball import Ball
+from scoreboard import Scoreboard
 from time import sleep
+from random import randint
 
-# Create Screen
+SCREEN_HEIGHT=600
+SCREEN_WIDTH=800
+
 screen = Screen()
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
-screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
 screen.bgcolor('black')
+screen.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
 screen.title("Ivy Shih's Classic Pong Game")
 screen.tracer(0)
 
+# Display paddle
 WIDTH = 20
 HEIGHT = 100
-RIGHT_X = 350
-RIGHT_Y = 0
+x_pos = 350
+y_pos = 0
 
-#score = Scoreboard()
+rPaddle = Paddle(x_pos, y_pos)
+lPaddle = Paddle(-x_pos, y_pos)
+ball = Ball(0, 0)
 
-ball = ball(0, 0)
-rPaddle = paddle(350, 0)
-lPaddle = paddle(-350, 0)
+score = Scoreboard(-50, 230)
+ball.random_direction()
+
+
+# paddle.goto
 
 screen.listen()
-screen.onkey(rPaddle.up, "Up")
-screen.onkey(rPaddle.down, "Down")
-screen.onkey(lPaddle.up, "a")
-screen.onkey(lPaddle.down, "z")
-
-#ball.setDirection()
-ball.setheading(120)
-distance = (int)(HEIGHT / 2 + WIDTH / 2)
+screen.onkeypress(rPaddle.up, "Up")
+screen.onkeypress(rPaddle.down, "Down")
+screen.onkeypress(lPaddle.up, "w")
+screen.onkeypress(lPaddle.down, "s")
 
 game_is_on = True
-paddle_bounce = 0
-movecount = 0
 
 while game_is_on:
-    sleep(0.1)
     # Let the ball to automatically bounce off the top/bottom plus the ball size
-    if ball.ycor() >= SCREEN_HEIGHT / 2 - WIDTH or ball.ycor() <= -SCREEN_HEIGHT / 2 + WIDTH:
+    if ball.ycor() >=  SCREEN_HEIGHT / 2 - WIDTH or ball.ycor() <= -SCREEN_HEIGHT / 2 + WIDTH:
         ball.bounceY()
 
-    # Detect collision with paddles
-    if  ball.distance(rPaddle) < HEIGHT/2 and ball.xcor() > 330 or ball.distance(lPaddle) < HEIGHT/2 and ball.xcor() <= -330:
+    # Detect collision with paddles and bounce accordingly
+    if  ball.distance(rPaddle) < HEIGHT/2 + WIDTH / 2 and ball.xcor() > 320 or ball.distance(lPaddle) < HEIGHT/2 + WIDTH / 2 and ball.xcor() < -320:
         ball.bounceX()
+        if ball.speed > 0:
+            ball.speed -= 0.01
+
+    # # if the ball is missed, reset the position and bounce the ball to the other player
+    xPos = ball.xcor()
+    if xPos > 340:
+        ball.reset()
+        score.addLeft()
+
+    if ball.xcor() < -340:
+        ball.reset()
+        score.addRight()
+
+    # If anyone's score is 5, game is OVER
+    if score.lscore == 5 or score.rscore == 5:
+        score.game_over()
+        game_is_on = False
 
     screen.update()
+    sleep(ball.speed)
     ball.move()
 
 

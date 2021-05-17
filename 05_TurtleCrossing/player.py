@@ -24,3 +24,6 @@ class Player(Turtle):
 
     def right(self):
         self.goto(self.xcor() + MOVE_DISTANCE, self.ycor())
+
+    def reset(self):
+        self.goto(STARTING_POSITION)

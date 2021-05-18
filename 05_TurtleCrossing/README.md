@@ -9,7 +9,7 @@ Use arrow up, down, left, and right keys to move the turtle to dodge the cars an
 
 Each time the turtle made to the top, the level goes up, and the car speed will increase.
 
-Game is over when the turtle got hit by car or the turtle has been moved out of the screen on the right/left side.
+Game is over when the turtle got hit by car.
 
 
 This is the final python small project on Turtle library that combines all knowledge used on all previous coded game based on Turtle library.

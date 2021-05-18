@@ -34,7 +34,13 @@ while game_is_on:
         score.add()
         player.reset()
 
+    if player.ycor() < -280:
+        player.goto(player.xcor(), -280)
 
+    if player.xcor() >=280:
+        player.goto(280, player.ycor())
+    elif player.xcor() <= -280:
+        player.goto(-280, player.ycor())
 
     for car in cars:
         if car.xcor() < -350:
@@ -46,7 +52,7 @@ while game_is_on:
         cm.createCars(randint(1,3))
         counter = 0
 
-    if cm.detectCollision(player) or player.xcor() >=290 or player.xcor() <= -290:
+    if cm.detectCollision(player):
         score.game_over()
         game_is_on = False
 

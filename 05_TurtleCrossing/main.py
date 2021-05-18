@@ -46,7 +46,7 @@ while game_is_on:
         cm.createCars(randint(1,3))
         counter = 0
 
-    if cm.detectCollision(player) or player.xcor() >=280 or player.xcor() <= -280:
+    if cm.detectCollision(player) or player.xcor() >=290 or player.xcor() <= -290:
         score.game_over()
         game_is_on = False
 

@@ -5,8 +5,7 @@ FONT = ("Courier", 24, "normal")
 
 class Scoreboard(Turtle):
     def __init__(self):
-        self.score1 = 0
-        self.score2 = 0
+        self.score = 0
         super().__init__()
         self.penup()
         self.color('white')
@@ -19,9 +18,9 @@ class Scoreboard(Turtle):
         self.write(f"GAME OVER", False, ALIGNMENT, FONT)
 
     def update(self):
+        self.clear()
         self.write(f"Score: {self.score}", False, ALIGNMENT, FONT)
 
     def add(self):
         self.score += 1
-        self.clear()
         self.update()

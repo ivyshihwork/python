@@ -18,4 +18,4 @@ OOP version: src/[food.py, main.py, scoreboard.py, snake.py]
 
 Enjoy!
 
-- by author Ivy Shih
+- by author Ivy Shih  ivy.shih.work@gmail.com

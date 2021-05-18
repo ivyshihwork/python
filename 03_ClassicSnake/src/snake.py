@@ -27,8 +27,9 @@ class Snake:
         self.segments.append(new_segment)
 
     def reset(self):
-        self.segments.clear()
-        self.create()
+        for seg in self.segments:
+            seg.reset()
+        self.__init__()
 
     def move(self):
         for seg_num in range(len(self.segments) - 1, 0, -1):

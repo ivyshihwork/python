@@ -3,7 +3,6 @@ from random import randint
 from turtle import Screen
 from player import Player
 from car_manager import CarManager
-from car_manager import cars
 from scoreboard import Scoreboard
 
 # Setting up screen
@@ -18,18 +17,6 @@ score = Scoreboard(-280,250)
 MOVE_INCREMENT = 10
 counter = 0
 
-
-def CarGenerator(numberofCars):
-    for car in range(0, numberofCars-1):
-        cars.append(CarManager())
-
-def detectCollision():
-    bang=False
-    for car in cars:
-        if player.distance(car) <= 30:
-            bang=True
-    return bang
-
 screen.listen()
 screen.onkeypress(player.up, "Up")
 screen.onkeypress(player.down, "Down")
@@ -37,8 +24,9 @@ screen.onkeypress(player.left, "Left")
 screen.onkeypress(player.right, "Right")
 
 game_is_on = True
-
-CarGenerator(randint(1,7))
+cm = CarManager()
+cars = cm.cars
+cm.createCars(randint(1,7))
 
 while game_is_on:
 
@@ -50,13 +38,13 @@ while game_is_on:
         if car.xcor() < -350:
             cars.remove(car)
         else:
-            car.move()
+            cm.move(car)
 
     if counter == 6:
-        CarGenerator(randint(1,7))
+        cm.createCars(randint(1,5))
         counter = 0
 
-    if detectCollision():
+    if cm.detectCollision(player):
         score.game_over()
         game_is_on = False
 

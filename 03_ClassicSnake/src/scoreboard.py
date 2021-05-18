@@ -21,6 +21,7 @@ class Scoreboard(Turtle):
     def resetScoreboard(self):
         if self.score > self.high_score:
             self.high_score = self.score
+        self.update()
         self.score = 0
 
     def update(self):

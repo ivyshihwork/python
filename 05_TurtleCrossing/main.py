@@ -27,11 +27,14 @@ game_is_on = True
 cm = CarManager()
 cars = cm.cars
 cm.createCars(randint(1,7))
+SPEED = 0.2
 
 while game_is_on:
 
     if player.ycor() >= 280:
         score.add()
+        if SPEED > 0:
+            SPEED -= 0.02
         player.reset()
 
     if player.ycor() < -280:
@@ -56,7 +59,7 @@ while game_is_on:
         score.game_over()
         game_is_on = False
 
-    time.sleep(0.1)
+    time.sleep(SPEED)
     screen.update()
     counter += 1
 

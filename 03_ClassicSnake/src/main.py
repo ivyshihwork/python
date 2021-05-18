@@ -22,7 +22,7 @@ screen.onkey(snake.down, "Down")
 screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
 
-STOP = 290
+STOP = 295
 game_is_on = True
 while game_is_on:
     screen.update()
@@ -39,10 +39,15 @@ while game_is_on:
     # wall is 300 x 300 - can use 280
     if snake.segments[0].xcor() > STOP or snake.segments[0].xcor() < -STOP or snake.segments[0].ycor() > STOP or snake.segments[0].ycor() <= -STOP:
         game_is_on = False
-        score.game_over()
+        #score.game_over()
+        score.resetScoreboard()
+        snake.reset()
+
     # Detect collision with body
     if any( dist < 15 for dist in { snake.segments[0].distance(seg) for seg in snake.segments[1:]}):
         game_is_on = False
-        score.game_over()
+        #score.game_over()
+        score.resetScoreboard()
+        snake.reset()
 
 screen.exitonclick()

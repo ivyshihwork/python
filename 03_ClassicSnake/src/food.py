@@ -8,11 +8,10 @@ class Food(Turtle):
         super().__init__()
         self.shape('circle')
         self.penup()
-        self.shapesize(0.5,0.5)
+        self.shapesize(0.7,0.7)
         self.color('blue')
         self.speed('fastest')
         self.move()
 
     def move(self):
         self.goto(randint(-200, 200), randint(-200, 200))
-

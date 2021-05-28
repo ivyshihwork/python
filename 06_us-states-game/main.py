@@ -48,6 +48,5 @@ while len(right_guesses) < 50:
 # generate a file of missing states upon exit
 states_to_learn_list =  list(set(state_names) - set(right_guesses))
 states_to_learn_list.sort()
-print(states_to_learn_list)
 df = pandas.DataFrame(states_to_learn_list, columns=['state'])
 df.to_csv(states_to_learn)

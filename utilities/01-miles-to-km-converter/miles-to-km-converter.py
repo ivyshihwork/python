@@ -7,6 +7,7 @@ window.config(padx=10, pady=10)
 
 miles = 0
 km = 0
+
 # Entry box
 def process_input():
     global miles, km

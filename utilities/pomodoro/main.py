@@ -9,7 +9,7 @@ YELLOW = "#f7f5dd"
 FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
-LONG_BREAK_MIN =20
+LONG_BREAK_MIN = 20
 reps = 0
 checkmark = '✔'
 count = 0
@@ -46,9 +46,12 @@ def start_countdown():
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
+def raise_above_all(win):
+    win.attributes('-topmost', 1)
+    win.attributes('-topmost', 0)
 
 def countdown(count):
-    global reps, runs, print_checkmark, checkmark
+    global reps, window, checkmark
     min = int(count / 60)
     sec = count % 60
     if min < 10:
@@ -60,6 +63,7 @@ def countdown(count):
         global running_timer
         running_timer = window.after(1000, countdown, count -1)
     if count == 0:
+        raise_above_all(window)
         if reps % 2 ==0 :
             label_runs.config(text=f'{int(reps /2 )* checkmark}')
         start_countdown()
@@ -85,7 +89,7 @@ canvas.grid(column=1, row=2)
 label_title = tkinter.Label(text='Timer', fg=GREEN, bg=YELLOW, font=(FONT_NAME, 45, 'normal'))
 label_title.grid(column=1, row=1)
 
-label_runs = tkinter.Label(text=f'00:00', fg=GREEN, bg=YELLOW)
+label_runs = tkinter.Label(text='', fg=GREEN, bg=YELLOW)
 label_runs.grid(column=1, row=4)
 
 # Buttons

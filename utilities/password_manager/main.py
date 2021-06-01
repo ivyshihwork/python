@@ -3,6 +3,7 @@ from tkinter import messagebox
 import os
 import string
 import random
+import pyperclip
 
 dirname = os.path.dirname(__file__)
 img_file = os.path.join(dirname, 'logo.png')
@@ -12,32 +13,18 @@ data_file = os.path.join(dirname, 'password_info.txt')
 
 def pw_gen():
 
-    letters = [ letter for letter in string.ascii_lowercase]
-    numbers = [ num for num in string.digits ]
-    symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
-
     password_list = []
 
-    num_letters = random.randint(8, 10)
-    num_symbols = random.randint(2, 4)
-    num_numbers = random.randint(2, 4)
-
-    for char in range(num_letters):
-        password_list.append(random.choice(letters))
-        UPPER = random.randint(0, len(password_list)-1)
-        password_list[UPPER]=password_list[UPPER].upper()
-
-    for char in range(num_symbols):
-        password_list += random.choice(symbols)
-
-    for char in range(num_numbers):
-        password_list += random.choice(numbers)
+    password_list += [random.choice(string.ascii_letters) for _ in range(random.randint(8, 10)) ]
+    password_list += [ random.choice(string.punctuation) for _ in range(random.randint(2, 4)) ]
+    password_list += [ random.choice(string.digits) for _ in range(random.randint(2, 4)) ]
 
     random.shuffle(password_list)
-
     password = ''.join(password_list)
+
     password_entry.delete(0,tkinter.END)
     password_entry.insert(0,password)
+    pyperclip.copy(password)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 # Trigger by Add button, separate data fields by |

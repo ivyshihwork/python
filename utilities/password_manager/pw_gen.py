@@ -1,5 +1,6 @@
 import string
-print([ letter for letter in string.ascii_lowercase])
+print(string.ascii_letters)
+print([ letter for letter in string.ascii_letters])
 print([ int(num) for num in string.digits ])
 # #Password Generator Project
 # import random

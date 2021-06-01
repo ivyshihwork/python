@@ -1,12 +1,43 @@
 import tkinter
 from tkinter import messagebox
 import os
+import string
+import random
 
 dirname = os.path.dirname(__file__)
 img_file = os.path.join(dirname, 'logo.png')
 data_file = os.path.join(dirname, 'password_info.txt')
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
+
+def pw_gen():
+
+    letters = [ letter for letter in string.ascii_lowercase]
+    numbers = [ num for num in string.digits ]
+    symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+    password_list = []
+
+    num_letters = random.randint(8, 10)
+    num_symbols = random.randint(2, 4)
+    num_numbers = random.randint(2, 4)
+
+    for char in range(num_letters):
+        password_list.append(random.choice(letters))
+        UPPER = random.randint(0, len(password_list)-1)
+        password_list[UPPER]=password_list[UPPER].upper()
+
+    for char in range(num_symbols):
+        password_list += random.choice(symbols)
+
+    for char in range(num_numbers):
+        password_list += random.choice(numbers)
+
+    random.shuffle(password_list)
+
+    password = ''.join(password_list)
+    password_entry.delete(0,tkinter.END)
+    password_entry.insert(0,password)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 # Trigger by Add button, separate data fields by |
@@ -63,7 +94,7 @@ password_label.grid(column=0, row=3)
 password_entry = tkinter.Entry(width=21)
 password_entry.grid(column=1, row=3)
 
-password_button = tkinter.Button(text='Generate Password')
+password_button = tkinter.Button(text='Generate Password', command=pw_gen)
 password_button.grid(column=2, row=3)
 
 add_button = tkinter.Button(text='Add',width=36, command=save_info)

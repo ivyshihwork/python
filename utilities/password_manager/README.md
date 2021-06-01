@@ -1,7 +1,7 @@
 Password Manager
 ================
 
-This password manager is created to keep track and generate password for different websites.
+This password manager has a graphical UI to keep track and generate password for different websites.
 
 The information will be stored in password_info.txt locally to this python program.
 

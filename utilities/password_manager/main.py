@@ -1,4 +1,5 @@
 import tkinter
+from tkinter import messagebox
 import os
 
 dirname = os.path.dirname(__file__)
@@ -15,11 +16,16 @@ def save_info():
     password_info = password_entry.get()
     new_entry = website_info + ' | ' + id_info + ' | ' + password_info + '\n'
 
-    with open(data_file, 'w+') as df:
-        df.write(new_entry)
+    ok_to_save = messagebox.askokcancel(title='Confirmation', message=f"New entry has:\n\n\tWebsite={website_info}\n\tEmail={id_info}\n\tPassword={password_info}\n\nIs it okay to save?\n")
 
-    website_entry.delete(0,tkinter.END)
-    password_entry.delete(0, tkinter.END)
+    if ok_to_save == True:
+        with open(data_file, 'w+') as df:
+            df.write(new_entry)
+        website_entry.delete(0,tkinter.END)
+        password_entry.delete(0, tkinter.END)
+        messagebox.showinfo(title="Success", message="A entry has been added to password_info.txt." )
+    else:
+        messagebox.showinfo(title="Action Cancelled", message="Data is not saved.\n")
 
 # ---------------------------- UI SETUP ------------------------------- #
 

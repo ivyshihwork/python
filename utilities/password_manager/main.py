@@ -72,7 +72,6 @@ id_label = tkinter.Label(text="Email/Username:")
 id_label.grid(column=0,row=2)
 
 id_entry = tkinter.Entry(width=35)
-id_entry.insert(0, "ivyshih@yahoo.com")
 id_entry.grid(column=1, row=2, columnspan=2)
 
 password_label = tkinter.Label(text='Password:')

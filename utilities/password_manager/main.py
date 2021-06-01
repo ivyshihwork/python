@@ -16,16 +16,18 @@ def save_info():
     password_info = password_entry.get()
     new_entry = website_info + ' | ' + id_info + ' | ' + password_info + '\n'
 
-    ok_to_save = messagebox.askokcancel(title='Confirmation', message=f"New entry has:\n\n\tWebsite={website_info}\n\tEmail={id_info}\n\tPassword={password_info}\n\nIs it okay to save?\n")
-
-    if ok_to_save == True:
-        with open(data_file, 'w+') as df:
-            df.write(new_entry)
-        website_entry.delete(0,tkinter.END)
-        password_entry.delete(0, tkinter.END)
-        messagebox.showinfo(title="Success", message="A entry has been added to password_info.txt." )
+    if website_info or id_info or password_info == None:
+        messagebox.showerror(title='Error', message="Do not leave any field empty!")
     else:
-        messagebox.showinfo(title="Action Cancelled", message="Data is not saved.\n")
+        ok_to_save = messagebox.askokcancel(title='Confirmation', message=f"New entry has:\n\n\tWebsite={website_info}\n\tEmail={id_info}\n\tPassword={password_info}\n\nIs it okay to save?\n")
+        if ok_to_save == True:
+            with open(data_file, 'w+') as df:
+                df.write(new_entry)
+            website_entry.delete(0,tkinter.END)
+            password_entry.delete(0, tkinter.END)
+            messagebox.showinfo(title="Success", message="A entry has been added to password_info.txt." )
+        else:
+            messagebox.showinfo(title="Action Cancelled", message="Data is not saved.\n")
 
 # ---------------------------- UI SETUP ------------------------------- #
 

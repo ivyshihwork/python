@@ -3,7 +3,7 @@ from tkinter import messagebox
 import os
 import string
 import random
-import pyperclip
+# import pyperclip
 import json
 
 dirname = os.path.dirname(__file__)
@@ -25,7 +25,7 @@ def pw_gen():
 
     password_entry.delete(0,tkinter.END)
     password_entry.insert(0,password)
-    pyperclip.copy(password)
+    #pyperclip.copy(password)
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 # Trigger by Add button, separate data fields by |

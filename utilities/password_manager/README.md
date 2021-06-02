@@ -10,7 +10,7 @@ Once 'Generate password' button is clicked, it will also copy the password to th
 Search function is based on the website name and is case insensitive.
 Once a record on file is found, all the fields will be updated to that record.
 
-Dependencies:  pypercip, tkinter
+Dependencies: tkinter
 
 Hope you will find it useful!
 

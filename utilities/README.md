@@ -15,5 +15,5 @@ Any suggestion / feedback is welcomed!
 List of uploaded Utilities
 __________________________
 Pomodoro - a study/work time management app designed to have balance for work/breaks
-Password Manager - an app to keep track login/password and regenerate password for websites
+Password Manager - an app to keep track login/password and regenerate password for websites locally.
 Flashy (in progress, not completed) - a flash card app for study

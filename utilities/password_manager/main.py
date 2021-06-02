@@ -34,7 +34,7 @@ def save_info():
     password_info = password_entry.get()
     new_entry = website_info + ' | ' + id_info + ' | ' + password_info + '\n'
 
-    if website_info or id_info or password_info == None:
+    if len(website_info) == 0 or len(id_info) == 0 or len(password_info) == 0:
         messagebox.showerror(title='Error', message="Do not leave any field empty!")
     else:
         ok_to_save = messagebox.askokcancel(title='Confirmation', message=f"New entry has:\n\n\tWebsite={website_info}\n\tEmail={id_info}\n\tPassword={password_info}\n\nIs it okay to save?\n")

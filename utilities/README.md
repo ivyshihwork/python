@@ -2,7 +2,7 @@ Utilities
 =========
 
 Here is a list of utilities applications I have created using python.
-The list will get updated as time goes back.  
+The list will get updated as time goes by.  
 Feel free to keep coming back and check them anytime!
 
 Please note the library dependencies for the individual apps.

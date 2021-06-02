@@ -4,10 +4,11 @@ import os
 import string
 import random
 import pyperclip
+import json
 
 dirname = os.path.dirname(__file__)
 img_file = os.path.join(dirname, 'logo.png')
-data_file = os.path.join(dirname, 'password_info.txt')
+data_file = os.path.join(dirname, 'password_info.json')
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 
@@ -32,20 +33,44 @@ def save_info():
     website_info = website_entry.get()
     id_info = id_entry.get()
     password_info = password_entry.get()
-    new_entry = website_info + ' | ' + id_info + ' | ' + password_info + '\n'
+    #new_entry = website_info + ' | ' + id_info + ' | ' + password_info + '\n'
+    new_entry = {
+        website_info.lower():{
+            'id': id_info,
+            'Password': password_info,
+        }
+    }
 
     if len(website_info) == 0 or len(id_info) == 0 or len(password_info) == 0:
         messagebox.showerror(title='Error', message="Do not leave any field empty!")
     else:
-        ok_to_save = messagebox.askokcancel(title='Confirmation', message=f"New entry has:\n\n\tWebsite={website_info}\n\tEmail={id_info}\n\tPassword={password_info}\n\nIs it okay to save?\n")
-        if ok_to_save == True:
-            with open(data_file, 'w+') as df:
-                df.write(new_entry)
-            website_entry.delete(0,tkinter.END)
-            password_entry.delete(0, tkinter.END)
-            messagebox.showinfo(title="Success", message="A entry has been added to password_info.txt." )
+        # ok_to_save = messagebox.askokcancel(title='Confirmation', message=f"New entry has:\n\n\tWebsite={website_info}\n\tEmail={id_info}\n\tPassword={password_info}\n\nIs it okay to save?\n")
+        # if ok_to_save == True:
+        #     with open(data_file, 'w+') as df:
+        #         df.write(new_entry)
+        #     website_entry.delete(0,tkinter.END)
+        #     password_entry.delete(0, tkinter.END)
+        #     messagebox.showinfo(title="Success", message="A entry has been added to password_info.txt." )
+        # else:
+        #     messagebox.showinfo(title="Action Cancelled", message="Data is not saved.\n")
+        try:
+            df = open (data_file, 'r')
+            data = json.load(df)
+        except (FileNotFoundError, json.decoder.JSONDecodeError):
+            data = new_entry
         else:
-            messagebox.showinfo(title="Action Cancelled", message="Data is not saved.\n")
+            data.update(new_entry)
+            df.close()
+        finally:
+            with open(data_file, 'w') as df2:
+                json.dump(data, df2, indent=4)
+
+        messagebox.showinfo(title="Success", message="A entry has been added to password_info.txt." )
+        website_entry.delete(0,tkinter.END)
+        id_entry.delete(0,tkinter.END)
+        password_entry.delete(0, tkinter.END)
+
+# ---------------------------- Search --------------------------------- #
 
 # ---------------------------- UI SETUP ------------------------------- #
 
@@ -66,7 +91,12 @@ website_label.grid(column=0, row=1)
 
 website_entry = tkinter.Entry(width=35)
 website_entry.grid(column=1, row=1, columnspan=2)
+# website_entry = tkinter.Entry(width=21)
+# website_entry.grid(column=1, row=1)
 website_entry.focus()
+
+# search_button = tkinter.Button(text='Search', width=14)
+# search_button.grid(column=2, row=1)
 
 id_label = tkinter.Label(text="Email/Username:")
 id_label.grid(column=0,row=2)

@@ -1,7 +1,7 @@
 '''
 Password Manager
 
-written by Ivy Shih 
+written by Ivy Shih     ivy.shih.work@gmail.com
 
 '''
 

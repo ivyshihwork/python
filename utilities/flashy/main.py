@@ -1,5 +1,8 @@
 '''
 Flashy is a flash card learning app.
+
+Done by Ivy Shih ivy.shih.work@gmail.com
+
 '''
 
 import tkinter

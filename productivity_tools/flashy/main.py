@@ -34,8 +34,6 @@ finally:
     lang= list(xlate_dict.keys())[0]
     xlate = list(xlate_dict.keys())[1]
     xlate_dict = all_data.to_dict(orient='records') # [{'French': 'partie', 'English': 'part'},
-    print(len(xlate_dict))
-
 
 #------------------------ Generate random word --------------------------
 def next_card():

@@ -40,14 +40,20 @@ finally:
 #------------------------ Generate random word --------------------------
 def next_card():
     global all_data,lang, xlate, random_word, flip_timer
-    random_word = random.choice(xlate_dict)
-    canvas.itemconfig(lang_word,text=random_word[lang])
-    # Flip card to front
-    window.after_cancel(flip_timer)
-    canvas.itemconfig(card_side, image=front_img)
-    canvas.itemconfig(lang_text, text=lang, fill='black')
-    canvas.itemconfig(lang_word, text=random_word[lang], fill='black')
-    flip_timer = window.after(3000, flip_card)
+    try:
+        random_word = random.choice(xlate_dict)
+    except IndexError:
+        canvas.itemconfig(card_side, image=front_img)
+        canvas.itemconfig(lang_text, text='Well Done!', fill='black')
+        canvas.itemconfig(lang_word, text="There's no word left to learn!", fill='black')
+    else:
+        canvas.itemconfig(lang_word,text=random_word[lang])
+        # Flip card to front
+        window.after_cancel(flip_timer)
+        canvas.itemconfig(card_side, image=front_img)
+        canvas.itemconfig(lang_text, text=lang, fill='black')
+        canvas.itemconfig(lang_word, text=random_word[lang], fill='black')
+        flip_timer = window.after(3000, flip_card)
 
 #------------------------ flip card ---------------------------
 

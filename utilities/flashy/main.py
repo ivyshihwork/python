@@ -17,7 +17,7 @@ card_back_img = os.path.join(dirname, 'images/card_back.png')
 right_img = os.path.join(dirname, 'images/right.png')
 wrong_img = os.path.join(dirname, 'images/wrong.png')
 data_file = os.path.join(dirname, 'data/french_words.csv')
-SIDE = 0
+to_learn_file = os.path.join(dirname, 'data/words_to_learn.csv')
 
 #------------------------ Read Data --------------------------
 try:
@@ -54,8 +54,17 @@ def flip_card():
     canvas.itemconfig(lang_text, text=xlate, fill='white')
     canvas.itemconfig(lang_word, text=random_word[xlate], fill='white')
 
+#------------------------ flip card ---------------------------
 
-#------------------------ UI Setup ---------------------------
+def check_button():
+    global xlate_dict, to_learn_file
+    xlate_dict.remove(random_word)
+    df = pandas.DataFrame(xlate_dict)
+    df.to_csv(to_learn_file)
+    next_card()
+
+
+#------------------------ UI Setup ----------------------------
 
 window = tkinter.Tk()
 window.title('Flashy')
@@ -78,7 +87,7 @@ wrong_button = tkinter.Button(image=w_img, highlightthickness=0, command=next_ca
 wrong_button.grid(column=0, row=1)
 
 r_img = tkinter.PhotoImage(file=right_img)
-right_button = tkinter.Button(image=r_img, highlightthickness=0, command=next_card)
+right_button = tkinter.Button(image=r_img, highlightthickness=0, command=check_button)
 right_button.grid(column=1, row=1)
 
 

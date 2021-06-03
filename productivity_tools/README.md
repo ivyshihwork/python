@@ -1,7 +1,7 @@
-Utilities
-=========
+Productivity Tools
+==================
 
-Here is a list of utilities applications I have created using python.
+Here is a list of applications I have created using python.
 The list will get updated as time goes by.  
 Feel free to keep coming back and check them anytime!
 
@@ -12,8 +12,8 @@ Any suggestion / feedback is welcomed!
 
 - By author Ivy Shih  ivy.shih.work@gmail.com
 
-List of uploaded Utilities
-__________________________
+List of Uploaded Productivity Tools
+-----------------------------------
 Pomodoro - a study/work time management app designed to have balance for work/breaks
-Password Manager - an app to keep track login/password and regenerate password for websites locally.
-Flashy (in progress, not completed) - a flash card app for study
+Password Manager - Keep track login/password and regenerate password for websites locally
+Flashy - a flash card app for learning

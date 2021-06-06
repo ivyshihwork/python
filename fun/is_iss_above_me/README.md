@@ -6,3 +6,5 @@ This script will look up the location of International Space Station and see if 
 If it is, it'll tell you to look up in the sky.
 
 Then it will check every 10 minutes.
+
+Dependency Libraries: requests, geocoder

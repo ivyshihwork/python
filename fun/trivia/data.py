@@ -1,5 +1,4 @@
 import requests
-#import json
 
 parameters = {
     'amount'    :   10,
@@ -12,7 +11,6 @@ response.raise_for_status()
 
 question_data = response.json()['results']
 
-#print(json.dumps(question_data, indent=4))
 ### THe data looks like below
 # [
 #     {

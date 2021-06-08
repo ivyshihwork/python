@@ -43,7 +43,6 @@ class QuizInterface:
             self.true_button.config(state='disabled')
             self.false_button.config(state='disabled')
 
-
     def true_clicked(self):
         self.feedback(self.quizbrain.check_answer('True'))
 

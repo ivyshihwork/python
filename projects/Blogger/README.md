@@ -22,10 +22,6 @@ Here is the summary list of files included:
         <td>File</td>
         <td>Usage</td>
       </tr>
-      <tr>
-        <td>Blogger/requirements.txt</td>
-        <td>Python modules used, and a lot more for experimentations</td>
-        </tr>
         <tr>
           <td>Blogger/projectEndPoints.docx</td>
           <td>All the API endpoints documentation</td>

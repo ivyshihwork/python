@@ -40,7 +40,7 @@ Here is the summary list of files included:
         </tr>
         <tr>
           <td>Blogger/flask/seed.py</td>
-          <td>python code to generate sample data to populate the database using Faker</td>
+          <td>Python code to generate sample data to populate the database using Faker</td>
         </tr>
         <tr>
           <td>Blogger/flask/Blogger_pgdump.sql</td>
@@ -48,11 +48,11 @@ Here is the summary list of files included:
         </tr>
         <tr>
           <td>Blogger/flask/Insomnia_2021-10-23.json</td>
-          <td>the API end point testing done in Insomnia</td>
+          <td>API end point testing done in Insomnia</td>
         </tr>
         <tr>
           <td>Blogger/flask/blogger/src</td>
-          <td>ource code for DB class model and API implementations</td>
+          <td>Source code for DB class model and API implementation</td>
         </tr>
     </table>
 

@@ -100,4 +100,5 @@ start_button.grid(column=0, row=3)
 reset_button = tkinter.Button(text="Reset", command=reset)
 reset_button.grid(column=2, row=3)
 
+
 window.mainloop()

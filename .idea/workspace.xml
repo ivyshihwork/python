@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="164a4bf8-3d57-40e8-8a1b-0e06ab2f0959" name="Default Changelist" comment="" />
+    <list default="true" id="1247bdbe-f4e5-4d65-a7a7-42192c4b03dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/python.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productivity_tools/pomodoro/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/productivity_tools/pomodoro/main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Ivy Shih &lt;ivy.shih.work@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1siX6D29nToCEUvFVqlWGLlIg7z" />
+  <component name="ProjectId" id="1tgGtEa8cgi2Bq3RCvbSvx8Q00w" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -19,9 +28,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -32,11 +39,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/03_ClassicSnake/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/productivity_tools/pomodoro" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/03_ClassicSnake/src/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/productivity_tools/pomodoro/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -54,12 +61,32 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="164a4bf8-3d57-40e8-8a1b-0e06ab2f0959" name="Default Changelist" comment="" />
-      <created>1621356254508</created>
+      <changelist id="1247bdbe-f4e5-4d65-a7a7-42192c4b03dc" name="Default Changelist" comment="" />
+      <created>1623183536778</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1621356254508</updated>
+      <updated>1623183536778</updated>
     </task>
+    <task id="LOCAL-00001" summary="Clean up the file for easy read.">
+      <created>1623189734394</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623189734394</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Trivia: Add refresh button and features to get 10 more new questions to play.">
+      <created>1623200928152</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1623200928152</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Clean up the file for easy read." />
+    <MESSAGE value="Trivia: Add refresh button and features to get 10 more new questions to play." />
+    <option name="LAST_COMMIT_MESSAGE" value="Trivia: Add refresh button and features to get 10 more new questions to play." />
   </component>
 </project>

@@ -23,6 +23,6 @@ Blogger/flask/blogger/src => source code for model and implementations<br>
 
 
 By author Ivy Shih - ivy.shih.work@gmail.com
-<br>
+<br><br>
 p.s. Like/unlike, comment on top of comments were not added intentionally.  They have been popular with Facebook but it causes a lot drama on social media!
 This is more for information sharing and reading. 

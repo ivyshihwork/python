@@ -8,8 +8,8 @@ This was developed using Docker, PostgresSQL, PGAdmin, Python, SQLAlchemy, psyco
 
 The design is simple.  It mainly contains user, blog, posts and comments.  
 User can:
-1. create account, blog, post, comment
-2. Follow blogs
+1. Create/fetch/update/delete account, blog, post, comment
+2. Follow/unfollow blogs
 
 Blogger/requirements.txt =>  all of the python modules used, and a few more for experimentations that haven't been added to this repo. <br>
 Blogger/projectEndPoints.docx => all the API endpoints available<br>

@@ -19,7 +19,10 @@ Blogger/flask/seed.py => python code to generate all the sample data to populate
 Blogger/flask/Blogger_pgdump.sql => pgdump.sql for the database that includes sample data<br>
 Blogger/flask/Insomnia_2021-10-23.json => the API end point testing done in Insomnia<br>
 Blogger/flask/blogger/src => source code for model and implementations<br>
-
+<br>
 
 
 By author Ivy Shih - ivy.shih.work@gmail.com
+<br>
+p.s. Like/unlike, comment on top of comments were not added intentionally.  They have been popular with Facebook but it causes a lot drama on social media!
+This is more for information sharing and reading. 

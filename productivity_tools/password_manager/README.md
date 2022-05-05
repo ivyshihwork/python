@@ -14,6 +14,14 @@ Dependencies:
 * Python 3
   * module tkinter
 
-Hope you will find it useful!
+To run:
+
+````
+python3 main.py
+````
+<img width="511" alt="Screen Shot 2022-05-05 at 13 02 28" src="https://user-images.githubusercontent.com/44271649/167016261-d5ac4074-f484-4f4f-8f3e-de8caad4de2d.png">
+
+
+Hope you will find it helpful!
 
 By Author Ivy Shih  ivy.shih.work@google.com

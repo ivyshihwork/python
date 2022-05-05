@@ -11,7 +11,7 @@ Search function is based on the website name and is case insensitive.
 Once a record on file is found, all the fields will be updated to that record.
 
 Dependencies: 
-1. Python 3
+* Python 3
   * module tkinter
 
 Hope you will find it useful!

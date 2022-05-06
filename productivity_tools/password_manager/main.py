@@ -102,7 +102,7 @@ def search():
 
 window = tkinter.Tk()
 window.title('Password Manager')
-window.minsize(width=450, height=400)
+window.minsize(width=500, height=400)
 window.config(padx=20,pady=20)
 
 lock_img = tkinter.PhotoImage(file=img_file)
@@ -125,13 +125,13 @@ search_button.grid(column=2, row=1)
 url_label = tkinter.Label(text="Website URL:")
 url_label.grid(column=0, row=2)
 
-url_entry = tkinter.Entry(width=35)
+url_entry = tkinter.Entry(width=40)
 url_entry.grid(column=1,row=2, columnspan=2)
 
 id_label = tkinter.Label(text="Username/Email:")
 id_label.grid(column=0,row=3)
 
-id_entry = tkinter.Entry(width=35)
+id_entry = tkinter.Entry(width=40)
 id_entry.grid(column=1, row=3, columnspan=2)
 
 password_label = tkinter.Label(text='Password:')

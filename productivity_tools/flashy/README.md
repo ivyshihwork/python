@@ -1,6 +1,10 @@
 Flashy
 ======
 
+
+<img width="829" alt="Screen Shot 2022-05-05 at 18 19 20" src="https://user-images.githubusercontent.com/44271649/167051446-3cd1c7fd-0778-4a30-83fc-12a0e781c27d.png"><img width="843" alt="Screen Shot 2022-05-05 at 18 19 43" src="https://user-images.githubusercontent.com/44271649/167051451-f389d383-c236-420f-ab61-2f8763d0d876.png">
+
+
 Welcome to Flashy - a flash card learning program.
 
 It takes a CSV file (e.g., data/french_words.csv).

@@ -1,6 +1,12 @@
 The Pomodoro Technique
 =======================
 
+
+<img width="369" alt="Screen Shot 2022-05-05 at 18 05 00" src="https://user-images.githubusercontent.com/44271649/167050370-4175a825-d1f9-4f76-a7d6-90a74eb27e99.png">
+
+
+This app is implemented base on: 
+
 https://en.wikipedia.org/wiki/Pomodoro_Technique
 
 It's a technique for work/study, and taking breaks in between for maximum benefits.
@@ -18,6 +24,16 @@ After start button is clicked, the cycle begins.
 When the timer ends for each work/break, the window will pop to front as the reminder to keep working or taking a break.
 
 To reset the timer, simply click on the Reset button to start the cycle again.
+
+Dependencies:
+* python3
+  * module tkinter
+
+To run it:
+  ````
+  python3 main.py
+  ````
+
 
 Hope you enjoy it!
 
